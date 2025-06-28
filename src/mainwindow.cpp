@@ -9,16 +9,16 @@
 #include "gamewindow.h"
 #include "ui_GameWindow.h"
 #include <QMessageBox>
+QString PlayerName1, PlayerName2, PlayerName3;
 
-
-MainWindow::MainWindow(QWidget *parent) :
-    QWidget(parent), ui(new Ui::MainWindow)
+MainWindow::MainWindow(QWidget *parent) : QWidget(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
     connect(ui->pushButton, &QPushButton::clicked, this, [this]() {
-        QString PlayerName1 = ui->textEdit->toPlainText();
-        QString PlayerName2 = ui->textEdit_2->toPlainText();
-        QString PlayerName3 = ui->textEdit_3->toPlainText();
+        qDebug() << "TEST";
+        PlayerName1 = ui->textEdit->toPlainText();
+        PlayerName2 = ui->textEdit_2->toPlainText();
+        PlayerName3 = ui->textEdit_3->toPlainText();
         if (!PlayerName1.isEmpty() && !PlayerName2.isEmpty() && !PlayerName3.isEmpty())
         {
             if (PlayerName1 == PlayerName2 || PlayerName1 == PlayerName3 || PlayerName2 == PlayerName3)
@@ -30,7 +30,6 @@ MainWindow::MainWindow(QWidget *parent) :
             gameWindow->show();
             this->close();
         }
-
     });
 }
 

@@ -31,6 +31,10 @@ add_executable(homework2 WIN32 main.cpp
         form/gamewindow.ui
         src/random.cpp
         include/random.h
+        src/legalcheck.cpp
+        include/legalcheck.h
+        resource/resource.qrc
+        resource/logo.rc
 )
 ADD_EXECUTABLE(main.cpp ${SOURCE_FILES} ${RC_FILES} ${QRC_FILES} ${UI_FILES} ${HEADER_FILES})
 target_link_libraries(homework2
